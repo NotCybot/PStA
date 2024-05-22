@@ -22,6 +22,10 @@ public class WebseitenGenerator {
     private String generatePage(String navigation, String content) {
         return "<html><body>"+navigation+content+"</body></html>";
     }
+    public void generate() {
+        String navigation = getNavigator();
+
+    }
 
 
 }
