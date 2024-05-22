@@ -17,7 +17,7 @@ public class Grossstadt extends Stadt {
     }
 
     @Override
-    public String getURL() {
-        return "wetter_grossstadt_" + formatURL() + ".html";
+    protected String getURLPrefix() {
+        return "wetter_grossstadt_";
     }
 }

@@ -19,5 +19,8 @@ public abstract  class Stadt {
                 .replace("ö", "oe")
                 .replace("ü", "ue");
     }
-    public abstract String getURL();
+    public  String getURL() {
+        return getURLPrefix() + formatURL() + ".html";
+    };
+    protected abstract String getURLPrefix();
 }
