@@ -1,12 +1,13 @@
 package th.rosenheim.oop;
 
 
+import java.io.IOException;
 import java.util.List;
 
 public class App {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         WebseitenGenerator webseitenGenerator = new WebseitenGenerator();
 
 
