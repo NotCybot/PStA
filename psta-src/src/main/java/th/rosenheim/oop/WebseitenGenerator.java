@@ -3,8 +3,6 @@ package th.rosenheim.oop;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class WebseitenGenerator {
         String nav = "";
         for (Stadt stadt : staedte) {
             if (!nav.isEmpty()) {
-                nav += "| ";
+                nav += " | ";
             }
             nav += "<a href=\"" + stadt.getURL() + "\">" + stadt.name + "</a>";
         }
