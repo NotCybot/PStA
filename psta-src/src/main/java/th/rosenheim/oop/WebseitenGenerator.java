@@ -1,2 +1,4 @@
-package th.rosenheim.oop;public class WebseitenGenerator {
+package th.rosenheim.oop;
+
+public class WebseitenGenerator {
 }

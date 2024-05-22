@@ -1,2 +1,5 @@
-package th.rosenheim.oop;public class Wetter {
+package th.rosenheim.oop;
+
+public enum Wetter {
+    SONNIG, BEWOELKT, REGNERISCH;
 }

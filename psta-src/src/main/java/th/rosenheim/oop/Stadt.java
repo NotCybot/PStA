@@ -1,2 +1,4 @@
-package th.rosenheim.oop;public class Stadt {
+package th.rosenheim.oop;
+
+public class Stadt {
 }
