@@ -4,8 +4,18 @@ package th.rosenheim.oop;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * This is the main class that runs the application.
+ */
+
 public class App {
 
+    /**
+     * The main method that runs the application.
+     *
+     * @param args The command line arguments.
+     * @throws IOException If an I/O error occurs.
+     */
 
     public static void main(String[] args) throws IOException {
         WebseitenGenerator webseitenGenerator = new WebseitenGenerator();
