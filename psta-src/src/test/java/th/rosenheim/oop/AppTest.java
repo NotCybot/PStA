@@ -9,7 +9,17 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * This class contains tests for the WebseitenGenerator class.
+ */
+
 public class AppTest {
+
+    /**
+     * This test checks the main functionality of the WebseitenGenerator class.
+     *
+     * @throws IOException If an I/O error occurs while reading the generated files.
+     */
 
     @Test
     public void testMain() throws IOException {
