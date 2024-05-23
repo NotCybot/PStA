@@ -62,6 +62,10 @@ public class WebseitenGenerator {
         File outputDir = new File("./output");
         if (!outputDir.exists()) {
             outputDir.mkdir();
+        } else {
+            for (File file : outputDir.listFiles()) {
+                file.delete();
+            }
         }
         try  (FileWriter indexwriter = new FileWriter(new File(outputDir, "index.html"))) {
             indexwriter.write(generatePage(navigation, ""));
