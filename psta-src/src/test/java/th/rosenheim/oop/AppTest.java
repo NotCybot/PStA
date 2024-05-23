@@ -22,7 +22,7 @@ public class AppTest {
      */
 
     @Test
-    public void testMain() throws IOException {
+    public void testApp() throws IOException {
         WebseitenGenerator webseitenGenerator = new WebseitenGenerator();
 
 
