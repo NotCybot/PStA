@@ -29,7 +29,7 @@ public class WebseitenGenerator {
      * @return The HTML for the navigation bar.
      */
 
-    public String getNavigator() {
+    public String getNavigation() {
         String nav = "";
         for (Stadt stadt : staedte) {
             if (!nav.isEmpty()) {
@@ -57,7 +57,7 @@ public class WebseitenGenerator {
      */
 
     public void generateWebsites() throws IOException {
-        String navigation = getNavigator();
+        String navigation = getNavigation();
 
         File outputDir = new File("./output");
         if (!outputDir.exists()) {
