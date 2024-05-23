@@ -30,7 +30,7 @@ public class App {
         webseitenGenerator.addStadt(Rosenheim);
         webseitenGenerator.addStadt(Köln);
 
-        webseitenGenerator.generate();
+        webseitenGenerator.generateWebsites();
     }
 
 }

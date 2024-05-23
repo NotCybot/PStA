@@ -56,7 +56,7 @@ public class WebseitenGenerator {
      * Generates the web pages for each city and saves them in the "output" directory.
      */
 
-    public void generate() throws IOException {
+    public void generateWebsites() throws IOException {
         String navigation = getNavigator();
 
         File outputDir = new File("./output");
