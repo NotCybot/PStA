@@ -1,6 +1,7 @@
 package th.rosenheim.oop;
 
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.io.File;
@@ -46,6 +47,7 @@ public class AppTest {
         assertTrue(münchen.contains("<p>In München ist es regnerisch.</p>"));
         assertTrue(münchen.contains("<p>Dies trifft auch für Schwabing, Sendlingen, Lehel und Nympenburg zu.</p>"));
     }
+
     @Test
     public void testkoelnContent() throws IOException {
         String köln = Files.readString(new File("./output/wetter_grossstadt_koeln.html").toPath());
@@ -59,5 +61,16 @@ public class AppTest {
         String rosenheim = Files.readString(new File("./output/wetter_kleinstadt_rosenheim.html").toPath());
         assertTrue(rosenheim.contains("<p>In Rosenheim ist es bewoelkt.</p>"));
 
+    }
+
+    @AfterAll
+    public static void deletedirectory() {
+        File outputDir = new File("./output");
+        if (outputDir.exists()) {
+            for (File file : outputDir.listFiles()) {
+                file.delete();
+            }
+            outputDir.delete();
         }
     }
+}

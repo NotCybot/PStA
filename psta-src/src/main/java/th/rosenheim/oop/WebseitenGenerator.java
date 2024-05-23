@@ -13,6 +13,10 @@ import java.util.List;
 public class WebseitenGenerator {
     private List<Stadt>  staedte = new ArrayList<>();
 
+    public List<Stadt> getStaedte() {
+        return staedte;
+    }
+
     /**
      * Adds a city to the list of cities.
      *
@@ -48,7 +52,7 @@ public class WebseitenGenerator {
      * @return The HTML for the web page.
      */
 
-    private String generatePage(String navigation, String content) {
+    public String generatePage(String navigation, String content) {
         return "<html><body>"+navigation+content+"</body></html>";
     }
 
