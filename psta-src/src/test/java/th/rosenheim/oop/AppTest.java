@@ -12,10 +12,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * This class contains tests for the WebseitenGenerator class.
+ * This class contains test the WebseitenGenerator class.
  */
 
 public class AppTest {
+
+    /**
+     * Set up the WebseitenGenerator and Stadt objects before running all the tests
+     * @throws IOException if there is an error generating the websites
+     */
 
     @BeforeAll
     public static void setUp() throws IOException {
@@ -33,6 +38,11 @@ public class AppTest {
         webseitenGenerator.generateWebsites();
     }
 
+    /**
+     * Test the content of the index page
+     * @throws IOException if there is an error reading the file
+     */
+
     @Test
     public void testindexContent() throws IOException {
         String index = Files.readString(new File("./output/index.html").toPath());
@@ -41,12 +51,22 @@ public class AppTest {
         assertTrue(index.contains("<a href=\"wetter_grossstadt_koeln.html\">Köln</a>"));
     }
 
+    /**
+     * Test the content of the München page
+     * @throws IOException if there is an error reading the file
+     */
+
     @Test
     public void testmuenchenContent() throws IOException {
         String münchen = Files.readString(new File("./output/wetter_grossstadt_muenchen.html").toPath());
         assertTrue(münchen.contains("<p>In München ist es regnerisch.</p>"));
         assertTrue(münchen.contains("<p>Dies trifft auch für Schwabing, Sendlingen, Lehel und Nympenburg zu.</p>"));
     }
+
+    /**
+     * Test the content of the Köln page
+     * @throws IOException if there is an error reading the file
+     */
 
     @Test
     public void testkoelnContent() throws IOException {
@@ -55,6 +75,11 @@ public class AppTest {
         assertTrue(köln.contains("<p>Dies trifft auch für Ehrenfeld, Raderthal, Nippes, Poll, Esch, Pesch und Kalk zu.</p>"));
     }
 
+    /**
+     * Test the content of the Rosenheim page
+     * @throws IOException if there is an error reading the file
+     */
+
     @Test
     public void testrosenheim() throws IOException {
 
@@ -62,6 +87,10 @@ public class AppTest {
         assertTrue(rosenheim.contains("<p>In Rosenheim ist es bewoelkt.</p>"));
 
     }
+
+    /**
+     * Clean up the output directory after all tests
+     */
 
     @AfterAll
     public static void deletedirectory() {

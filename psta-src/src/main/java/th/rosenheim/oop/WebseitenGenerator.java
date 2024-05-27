@@ -13,6 +13,12 @@ import java.util.List;
 public class WebseitenGenerator {
     private List<Stadt>  staedte = new ArrayList<>();
 
+    /**
+     * Returns the list of cities.
+     *
+     * @return The list of cities.
+     */
+
     public List<Stadt> getStaedte() {
         return staedte;
     }
@@ -58,6 +64,7 @@ public class WebseitenGenerator {
 
     /**
      * Generates the web pages for each city and saves them in the "output" directory.
+     * @throws IOException if there is an error generating the websites
      */
 
     public void generateWebsites() throws IOException {

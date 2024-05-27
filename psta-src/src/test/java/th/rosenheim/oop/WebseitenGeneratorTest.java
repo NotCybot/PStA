@@ -7,13 +7,24 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+    /**
+    * Default constructor for the WebseitenGeneratorTest class.
+    */
 public class WebseitenGeneratorTest {
+
+    /**
+     * Declare the WebseitenGenerator and Stadt objects
+     */
 
     private static WebseitenGenerator webseitenGenerator;
     private static Grossstadt münchen;
     private static Kleinstadt rosenheim;
     private static Grossstadt köln;
+
+    /**
+     * Set up the test environment and Stadt objects before running all the tests
+     * @throws IOException if there is an error generating the websites
+     */
 
     @BeforeAll
     public static void setUp() throws IOException {
@@ -31,6 +42,9 @@ public class WebseitenGeneratorTest {
 
     }
 
+    /**
+     * Test the addStadt method
+     */
 
     @Test
     public void testaddStadt() {
@@ -41,6 +55,11 @@ public class WebseitenGeneratorTest {
 
     }
 
+    /**
+     * Test the getNavigation method
+     * @throws IOException if there is an error generating the navigation
+     */
+
     @Test
     public void testgetNavigation() throws IOException {
         String navigation = webseitenGenerator.getNavigation();
@@ -49,10 +68,18 @@ public class WebseitenGeneratorTest {
         assertTrue(navigation.contains("Köln"));
     }
 
+    /**
+     * Test the generatePage method for all cities
+     */
+
     @Test
     public void testGeneratePage() {
         String navigation = webseitenGenerator.getNavigation();
         List<Stadt> staedte = webseitenGenerator.getStaedte();
+
+        /**
+         * Iterate over all cities and test the generatePage method for each city
+         */
 
         for (Stadt stadt : staedte) {
             String expectedHtml = "<html><body>" + navigation + stadt.getContent() + "</body></html>";

@@ -9,7 +9,6 @@ import java.util.List;
  */
 
 public class App {
-
     /**
      * The main method that runs the application.
      *

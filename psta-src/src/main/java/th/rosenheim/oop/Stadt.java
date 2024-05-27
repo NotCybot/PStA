@@ -5,7 +5,13 @@ package th.rosenheim.oop;
  */
 
 public abstract  class Stadt {
+    /**
+     * The name of the city.
+     */
     protected String name;
+    /**
+     * The weather in the city.
+     */
     protected Wetter wetter;
 
     /**
@@ -30,6 +36,7 @@ public abstract  class Stadt {
 
     /**
      * Returns the URL for the city's web page.
+     * The city name is formatted by converting it to lowercase, replacing spaces with underscores, and replacing German umlauts with their English counterparts..
      *
      * @return The URL for the city's web page.
      */
@@ -41,6 +48,14 @@ public abstract  class Stadt {
                 .replace("ö", "oe")
                 .replace("ü", "ue");
     }
+
+    /**
+     * Returns the URL for the city's web page.
+     * The URL is constructed by taking the URL prefix, the formatted city name, and the ".html" extension.
+     *
+     * @return The URL for the city's web page.
+     */
+
     public  String getURL() {
         return getURLPrefix() + formatURL() + ".html";
     };
