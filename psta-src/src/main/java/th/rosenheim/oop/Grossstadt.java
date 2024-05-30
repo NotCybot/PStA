@@ -32,20 +32,20 @@ public class Grossstadt extends Stadt {
     @Override
     public String getContent() {
         StringBuilder content = new StringBuilder();
-        content.append(String.format("<p>In %s ist es %s.</p>", name, wetter));
+        content.append(String.format("<p>In %s ist es %s.</p>", name, wetter.toString().toLowerCase()));
         content.append("<p>Dies trifft auch für ");
         for (int i = 0; i < stadtteile.size(); i++) {
-            if (i > 0) {
+            if (i > 0 && i < stadtteile.size() - 1) {
                 content.append(", ");
             }
             if (i == stadtteile.size() - 1) {
-                content.append("und ");
+                content.append(" und ");
             }
             content.append(stadtteile.get(i));
         }
         content.append(" zu.</p>");
         return content.toString();
-        }
+    }
 
     /**
      * Returns the URL prefix for the city's web page.
