@@ -3,6 +3,13 @@ package th.rosenheim.oop;
 
 import java.io.IOException;
 import java.util.List;
+/**
+ * PStA 2024 Wetter-App
+ *
+ * @author NotCybot
+ * @version 1.0
+ *
+ */
 
 /**
  * This is the main class that runs the application.

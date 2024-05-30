@@ -1,26 +1,40 @@
-# OOP PStA Template Project
+# Weather Website Generator
 
-## How to get the project
+This project is a weather website generator for cities. It is written in Java and uses Gradle for build automation.
 
-### Download as ZIP
-- To get the template project for your PStA, click on "Code-Download source code - zip"
-- After downloading the source code, unzip the content. 
-- In GitLab, switch to your repository. Clone your repository with `git clone [yourProjectURL]`.
-- On your computer, replace the content of the cloned folder with the content of the ZIP file.
-- Afterwards, add the new content with `git add .` to your local repository. Perform a commit with `git commit -m "Initial setup"` and push it with `git push -u origin main` into your GitLab repository.
+## Features
 
-## Open your project in IntelliJ
+- Generate a static webpage for each given city with its weather information.
+- Each city webpage includes a navigation bar to easily navigate between cities.
+- The project includes unit tests to ensure the functionality of the website generator.
+- The project supports the creation of JavaDoc documentation.
 
-To open the project from IntelliJ move to File>Open... 
-![With Alrady Opened Project](.pictures/OpenProject.png)
+## Getting Started
 
-To open the project from the Welcome Screen click open
-![From Welcome Screen](.pictures/OpenProjectFromWelcome.png)
+### Prerequisites
 
-Then navigate to your project folder and open the psta-src folder in IntelliJ
-![Open Src Folder](.pictures/SelectFolder.png)
+- Java JDK 21 or later
+- Gradle 8.0 or later
+- IntelliJ IDEA 2024.1.2 or later
 
-After that the setup should be done automatically.
+### Installation
 
-The main class is: `src/main/java/th/rosenheim/oop/App.java`
-![Main Class](.pictures/Main_Class.png)
+1. Clone the repository: `git clone [yourProjectURL]`
+2. Open the project in IntelliJ IDEA: File > Open > Navigate to your project folder > Open the `psta-src` folder
+
+## Usage
+
+The main class is located at `src/main/java/th/rosenheim/oop/App.java`. Run this class to start the website generator.
+
+## UML Diagramm
+
+![UML Diagramm](.pictures/uml.svg)
+
+
+## Testing
+
+Unit tests are located in the `src/test/java/th/rosenheim/oop` directory. You can run these tests to verify the functionality of the website generator.
+
+## License and Acknowledgments
+
+- This project structure and Idea is provided by [Technische Hochschule Rosenheim](https://www.th-rosenheim.de/die-hochschule/fakultaeten/fakultaet-fuer-informatik)
