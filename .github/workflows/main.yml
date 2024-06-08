@@ -1,0 +1,72 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: gradle:8.7.0-jdk21
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up environment variables
+        run: |
+          echo "PROJECT_DIR=./psta-src" >> $GITHUB_ENV
+          echo "JAR_NAME=psta-src-1.0" >> $GITHUB_ENV
+
+      - name: Run tests
+        run: |
+          cd ${{ env.PROJECT_DIR }}
+          gradle test
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: gradle:8.7.0-jdk21
+    needs: test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up environment variables
+        run: |
+          echo "PROJECT_DIR=./psta-src" >> $GITHUB_ENV
+          echo "JAR_NAME=psta-src-1.0" >> $GITHUB_ENV
+
+      - name: Build project
+        run: |
+          cd ${{ env.PROJECT_DIR }}
+          gradle assemble
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.JAR_NAME }}.jar
+          path: ${{ env.PROJECT_DIR }}/build/libs/${{ env.JAR_NAME }}.jar
+
+  run:
+    runs-on: ubuntu-latest
+    container:
+      image: gradle:8.7.0-jdk21
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up environment variables
+        run: |
+          echo "PROJECT_DIR=./psta-src" >> $GITHUB_ENV
+          echo "JAR_NAME=psta-src-1.0" >> $GITHUB_ENV
+
+      - name: Run project
+        run: |
+          cd ${{ env.PROJECT_DIR }}
+          gradle run
