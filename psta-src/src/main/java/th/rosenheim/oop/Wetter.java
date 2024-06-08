@@ -18,5 +18,9 @@ public enum Wetter {
     /**
      * Represents rainy weather.
      */
-    REGNERISCH;
+    REGNERISCH,
+    /**
+     * Represents unknown weather.
+     */
+    UNBEKANNT;
 }
